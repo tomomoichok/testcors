@@ -28,7 +28,7 @@ console.log('GitHub Pages Sample');
             url: hostUrl,
             type:'POST',
             dataType: 'json',
-            data : JSON.stringify({parameter1 : param1, parameter2 : param2 })
+            data : JSON.stringify({"parameter1" : param1, "parameter2" : param2 })
         }).done(function(data) {
                           console.log('test OK');
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
