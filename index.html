@@ -9,11 +9,32 @@
 <body>
 <main>
   <h1>GitHub Pages のサンプルです</h1>
-  <a href="http://www.tam-tam.co.jp/tipsnote/"><button>TipsNote に戻る</button></a>
+  <button id="ajax-button">テストCORS</button>
+  <p>
+    <img src="https://recipesearch.kikkoman-sit.com/img/normal_1.jpg" />
+    </p>
 </main>
 
 <script>
 console.log('GitHub Pages Sample');
+  $( function() {
+    $('#ajax-button').click(
+    function() {
+        var hostUrl= 'https://recipesearch.kikkoman-sit.com/api/search';
+        var param1 = 'asd';
+        var param2 = 10;
+        $.ajax({
+            url: hostUrl,
+            type:'POST',
+            dataType: 'json',
+            data : {parameter1 : param1, parameter2 : param2 }
+        }).done(function(data) {
+                          console.log('test OK');
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                         console.log('test error');
+        })
+    });
+} );
 </script>
 </body>
 </html>
