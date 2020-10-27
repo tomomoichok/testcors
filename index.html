@@ -34,6 +34,7 @@ console.log('GitHub Pages Sample');
             dataType: 'json',
             data : JSON.stringify({"parameter1" : param1, "parameter2" : param2 })
         }).done(function(data) {
+          console.log(data)
                           alert(data);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert('test error');
