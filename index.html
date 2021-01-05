@@ -21,7 +21,7 @@ console.log('GitHub Pages Sample');
 
     $('#ajax-button').click(
     function() {
-        var hostUrl= 'https://recipesearch.kikkoman-sit.com/api/search';
+        var hostUrl= 'https://biz-staging.kikkoman-sk.com/api/hitcount';
         var param1 = 'asd';
         var param2 = 10;
         $.ajax({
@@ -32,7 +32,7 @@ console.log('GitHub Pages Sample');
                 'Content-Type': 'application/json' 
             },
             dataType: 'json',
-            data : JSON.stringify({"parameter1" : param1, "parameter2" : param2 })
+            data : JSON.stringify({"freeword" : "肉"})
         }).done(function(data) {
           console.log(data)
           alert(data);
